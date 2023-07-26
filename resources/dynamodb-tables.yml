@@ -1,0 +1,14 @@
+Resources:
+  chats:
+    Type: 'AWS::DynamoDB::Table'
+    Properties:
+      TableName: tables
+      AttributeDefinitions:
+        - AttributeName: hoge
+          AttributeType: S
+      KeySchema:
+        - AttributeName: hoge
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1

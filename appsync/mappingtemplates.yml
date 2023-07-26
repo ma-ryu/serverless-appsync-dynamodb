@@ -1,0 +1,11 @@
+- dataSource: "chat"
+  type: "Query"
+  field: "find"
+  request: "query/vtl"
+  response: "query/vtl"
+
+- dataSource: "chat"
+  type: "Mutation"
+  field: "create"
+  request: "mutation/vtl"
+  response: "mutation/vtl"

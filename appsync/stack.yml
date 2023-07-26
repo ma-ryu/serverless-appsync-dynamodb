@@ -1,0 +1,14 @@
+- name: "app-sync"
+  authenticationType: "API_KEY"
+  apiKeys:
+    - name: "test-api-key"
+      description: "test"
+      expiresAfter: "30d"
+  schema: "graphql/schema.graphql"
+  mappingTemplatesLocation: appsync/resolvers
+  mappingTemplates:
+    - ${file(appsync/mappingtemplates.yml)}
+  dataSources:
+    - ${file(appsync/datasources.yml)}
+
+

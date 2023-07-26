@@ -1,0 +1,14 @@
+stages: ["local"]
+start:
+  docker: true
+  port: "8000"
+  inMemory: true
+  migrate: true
+  seed: true
+  convertEmptyValues: true
+  noStart: true
+seed:
+  local:
+    sources:
+      - table: "tables"
+        sources: []

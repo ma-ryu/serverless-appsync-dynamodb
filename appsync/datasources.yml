@@ -1,0 +1,6 @@
+- type: "AMAZON_DYNAMODB"
+  name: "tables"
+  config:
+    tableName: { Ref: "tables" }
+    serviceRoleArn:
+      Fn: ":GetAtt: [AppSyncDynamoDBServiceRole, Arn]"

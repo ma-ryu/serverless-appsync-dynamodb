@@ -1,0 +1,23 @@
+service: app-sync-dynamodb
+frameworkVersion: "3"
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: local
+  region: ap-northeast-1
+
+plugins:
+  - "serverless-appsync-simulator"
+  - "serverless-appsync-plugin"
+  - "serverless-dynamodb-local"
+  - "serverless-offline"
+
+custom:
+  appsync-simulator:
+    location: .esbuild/.build
+    apiKey: "da2-fakeApiId123456"
+    watch: false
+  appSync: ${file(./appsync/stack.yml)}
+  dynamodb: ${file(./dynamodb.yml)}
+resources:
+  - ${file(./resources/dynamodb-tables.yml)}
